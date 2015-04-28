@@ -73,8 +73,9 @@ table {
   min-width: 960px;
   margin: 0 auto;
   overflow: hidden;
-  /*background: url('/assets/AhuAkivi.png') cover no-repeat,
-    url('/assets/bg-sky.png') repeat-x #65b7f1;*/
+  background: url('/assets/AhuAkivi.png') no-repeat;
+  background-size: 100% 150%;
+  background-color: rgb(150,242,253);
   color: white;
   font-family: "Play", sans-serif;
 }
@@ -139,13 +140,90 @@ table {
   font-size: 1.5em;
   line-height: 1.2em;
 }
-/*#sequence .info1 .info2 .info3 .info4{
-  background-color: rgba(180,180,180,0.3);
-  border-radius: 15px;
-  padding: 10px;
-}*/
 #sequence .info1 {
   color: white;
+  font-size: 1.3em;
+  right: 150%;
+  line-height: 1.5em;
+  top: 400px;
+  width: 30%;
+  z-index: 10;
+  vertical-align: middle;
+  background-color: rgba(180,180,180,0.4);
+  border-radius: 15px;
+  padding: 10px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+  -webkit-transition-property: right;
+  -moz-transition-property: right;
+  -ms-transition-property: right;
+  -o-transition-property: right;
+  transition-property: right;
+}
+#sequence .animate-in .info1 {
+  right: 15%;
+  top: 400px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+#sequence .animate-out .info1 {
+  right: -150%;
+  top: 300px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+#sequence .info1 img.chord {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+#sequence .chord {
+  left: -140%;
+  top: 150%;
+  max-width: 100%;
+  z-index: 6;
+  background-color: rgba(180,180,180,0.1);
+  border-radius: 50px;
+  padding: 10px;
+  -webkit-transition-property: left top;
+  -moz-transition-property: left top;
+  -ms-transition-property: left top;
+  -o-transition-property: left top;
+  transition-property: left top;
+}
+#sequence .animate-in .chord {
+  left: -170%;
+  top: -430px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+  z-index: 4;
+}
+#sequence .animate-out .chord {
+  left: 140%;
+  top: -30px;
+  z-index: 2;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+#sequence .info2 {
+  color: black;
   font-size: 1em;
   right: 150%;
   line-height: 1.2em;
@@ -167,7 +245,7 @@ table {
   -o-transition-property: right;
   transition-property: right;
 }
-#sequence .animate-in .info1 {
+#sequence .animate-in .info2 {
   right: 15%;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
@@ -175,7 +253,7 @@ table {
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-#sequence .animate-out .info1 {
+#sequence .animate-out .info2 {
   right: -150%;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
@@ -183,20 +261,23 @@ table {
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-#sequence .chord {
+#sequence .journey {
   left: -140%;
   top: 200px;
-  max-width: 40%;
+  max-width: 100%;
   z-index: 6;
+  background-color: rgba(180,180,180,0.1);
+  border-radius: 50px;
+  padding: 10px;
   -webkit-transition-property: left top;
   -moz-transition-property: left top;
   -ms-transition-property: left top;
   -o-transition-property: left top;
   transition-property: left top;
 }
-#sequence .animate-in .chord {
-  left: 15%;
-  top: 70px;
+#sequence .animate-in .journey {
+  left: -170%;
+  top: -260px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -204,7 +285,7 @@ table {
   transition-duration: 4s;
   z-index: 4;
 }
-#sequence .animate-out .chord {
+#sequence .animate-out .journey {
   left: 140%;
   top: -30px;
   z-index: 2;
@@ -213,6 +294,119 @@ table {
   -ms-transition-duration: 4s;
   -o-transition-duration: 4s;
   transition-duration: 4s;
+}
+#sequence .info2 img.journey {
+  position: absolute;
+  width: 75%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#sequence .info3 {
+  color: black;
+  font-size: 1em;
+  right: 150%;
+  line-height: 1.2em;
+  top: 270px;
+  width: 25%;
+  z-index: 10;
+  vertical-align: middle;
+  background-color: rgba(180,180,180,0.3);
+  border-radius: 15px;
+  padding: 10px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+  -webkit-transition-property: right;
+  -moz-transition-property: right;
+  -ms-transition-property: right;
+  -o-transition-property: right;
+  transition-property: right;
+}
+
+#sequence .animate-in .info3 {
+  right: 15%;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+
+#sequence .animate-out .info3 {
+  right: -150%;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+
+#sequence .info3 img.thumb {
+  position: absolute;
+  width: 75%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#sequence .info4 {
+  color: black;
+  font-size: 1em;
+  right: 150%;
+  line-height: 1.2em;
+  top: 270px;
+  width: 25%;
+  z-index: 10;
+  vertical-align: middle;
+  background-color: rgba(180,180,180,0.3);
+  border-radius: 15px;
+  padding: 10px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+  -webkit-transition-property: right;
+  -moz-transition-property: right;
+  -ms-transition-property: right;
+  -o-transition-property: right;
+  transition-property: right;
+}
+
+#sequence .animate-in .info4 {
+  right: 15%;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+#sequence .animate-out .info4 {
+  right: -150%;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+
+#sequence .info4 img.chef-welcome {
+  position: absolute;
+  width: 75%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+object.bennett-cv {
+  background-image: url('/assets/bayon.jpg');
+  height: 800px;
+  width: 100%;
 }
 #sequence .locative-landing {
   left: -50%;
@@ -291,7 +485,7 @@ table {
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-#sequence .thumbs-down .chef-logo {
+#sequence .thumb .chef-welcome {
   left: -30%;
   opacity: 0;
   max-width: 40%;
@@ -308,7 +502,7 @@ table {
   -ms-transition-property: left top -ms-transform;
   transition-property: left top transform;
 }
-#sequence .animate-in .thumbs-down .chef-logo {
+#sequence .animate-in .thumb .chef-welcome {
   left: -15%;
   top: 300px;
   opacity: 1;
@@ -329,7 +523,7 @@ table {
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-#sequence .animate-out .thumbs-down .chef-logo {
+#sequence .animate-out .thumb .chef-welcome {
   left: -15%;
   opacity: 0;
   top: 300px;
@@ -350,7 +544,7 @@ table {
   -o-transition-duration: 3s;
   transition-duration: 3s;
 }
-#sequence .sequence-fallback .animate-in .thumbs-down .chef-logo {
+#sequence .sequence-fallback .animate-in .thumb .chef-welcome {
   left: 20%;
   top: 200px;
 }
