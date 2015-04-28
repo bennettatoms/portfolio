@@ -103,10 +103,11 @@ table {
   cursor: pointer;
   display: none;
   font-size: 80px;
-  font-weight: bold;
+  font-weight: 900;
   position: absolute;
-  opacity: 0.6;
-  top: 280px;
+  opacity: 0.8;
+  top: 45%;
+  transform: translate(0, -50%)
   height: 41px;
   width: 39px;
   z-index: 20;
@@ -125,11 +126,11 @@ table {
 #sequence .sequence-next:hover,
 #sequence .sequence-prev:hover {
   opacity: 1;
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  -o-transform: scale(1.4);
+  transform: scale(1.4);
   -webkit-transition-duration: 0.4s;
   -moz-transition-duration: 0.4s;
   -ms-transition-duration: 0.4s;
@@ -145,7 +146,7 @@ table {
   font-size: 1.3em;
   right: 150%;
   line-height: 1.5em;
-  top: 400px;
+  top: 450px;
   width: 30%;
   z-index: 10;
   vertical-align: middle;
@@ -164,8 +165,8 @@ table {
   transition-property: right;
 }
 #sequence .animate-in .info1 {
-  right: 15%;
-  top: 400px;
+  right: 10%;
+  top: 450px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -174,7 +175,7 @@ table {
 }
 #sequence .animate-out .info1 {
   right: -150%;
-  top: 300px;
+  top: 450px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -183,7 +184,7 @@ table {
 }
 #sequence .info1 img.chord {
   position: absolute;
-  width: 100%;
+  width: 150%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -191,9 +192,9 @@ table {
 #sequence .chord {
   left: -140%;
   top: 150%;
-  max-width: 100%;
+  max-width: 150%;
   z-index: 6;
-  background-color: rgba(180,180,180,0.1);
+  background-color: rgba(180,180,180,0.0);
   border-radius: 50px;
   padding: 10px;
   -webkit-transition-property: left top;
@@ -203,8 +204,8 @@ table {
   transition-property: left top;
 }
 #sequence .animate-in .chord {
-  left: -170%;
-  top: -430px;
+  left: -165%;
+  top: -400px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -223,11 +224,11 @@ table {
   transition-duration: 4s;
 }
 #sequence .info2 {
-  color: black;
-  font-size: 1em;
-  right: 150%;
-  line-height: 1.2em;
-  top: 270px;
+  color: white;
+  font-size: 1.3em;
+  left: -150%;
+  line-height: 1.5em;
+  top: 50px;
   width: 25%;
   z-index: 10;
   vertical-align: middle;
@@ -239,14 +240,14 @@ table {
   -ms-transition-duration: 4s;
   -o-transition-duration: 4s;
   transition-duration: 4s;
-  -webkit-transition-property: right;
-  -moz-transition-property: right;
-  -ms-transition-property: right;
-  -o-transition-property: right;
-  transition-property: right;
+  -webkit-transition-property: left;
+  -moz-transition-property: left;
+  -ms-transition-property: left;
+  -o-transition-property: left;
+  transition-property: left;
 }
 #sequence .animate-in .info2 {
-  right: 15%;
+  left: 8%;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -254,21 +255,28 @@ table {
   transition-duration: 4s;
 }
 #sequence .animate-out .info2 {
-  right: -150%;
+  left: -150%;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
+#sequence .info2 img.journey {
+  position: absolute;
+  width: 180%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 #sequence .journey {
   left: -140%;
-  top: 200px;
-  max-width: 100%;
+  top: 400px;
+  max-width: 180%;
   z-index: 6;
   background-color: rgba(180,180,180,0.1);
-  border-radius: 50px;
-  padding: 10px;
+  border-radius: 10px;
+  opacity: 0.9;
   -webkit-transition-property: left top;
   -moz-transition-property: left top;
   -ms-transition-property: left top;
@@ -276,8 +284,8 @@ table {
   transition-property: left top;
 }
 #sequence .animate-in .journey {
-  left: -170%;
-  top: -260px;
+  left: 140%;
+  top: 100px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -295,25 +303,16 @@ table {
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-#sequence .info2 img.journey {
-  position: absolute;
-  width: 75%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
 #sequence .info3 {
-  color: black;
-  font-size: 1em;
+  color: white;
+  font-size: 1.3em;
   right: 150%;
-  line-height: 1.2em;
-  top: 270px;
-  width: 25%;
+  line-height: 1.5em;
+  top: 400px;
+  width: 30%;
   z-index: 10;
   vertical-align: middle;
-  background-color: rgba(180,180,180,0.3);
+  background-color: rgba(180,180,180,0.5);
   border-radius: 15px;
   padding: 10px;
   -webkit-transition-duration: 4s;
@@ -327,39 +326,72 @@ table {
   -o-transition-property: right;
   transition-property: right;
 }
-
 #sequence .animate-in .info3 {
-  right: 15%;
+  right: 10%;
+  top: 300px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-
 #sequence .animate-out .info3 {
   right: -150%;
+  top: 300px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-
 #sequence .info3 img.thumb {
   position: absolute;
-  width: 75%;
+  width: 120%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 }
-
+#sequence .thumb {
+  left: -140%;
+  top: 150%;
+  max-width: 120%;
+  z-index: 6;
+  background-color: rgba(180,180,180,0);
+  border-radius: 50px;
+  opacity: 0.8;
+  padding: 10px;
+  -webkit-transition-property: left top;
+  -moz-transition-property: left top;
+  -ms-transition-property: left top;
+  -o-transition-property: left top;
+  transition-property: left top;
+}
+#sequence .animate-in .thumb {
+  left: -150%;
+  top: -200px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+  z-index: 4;
+}
+#sequence .animate-out .thumb {
+  left: 140%;
+  top: -30px;
+  z-index: 2;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
 #sequence .info4 {
-  color: black;
-  font-size: 1em;
-  right: 150%;
-  line-height: 1.2em;
-  top: 270px;
+  color: white;
+  font-size: 1.3em;
+  left: -150%;
+  line-height: 1.5em;
+  top: 10px;
   width: 25%;
   z-index: 10;
   vertical-align: middle;
@@ -371,15 +403,15 @@ table {
   -ms-transition-duration: 4s;
   -o-transition-duration: 4s;
   transition-duration: 4s;
-  -webkit-transition-property: right;
-  -moz-transition-property: right;
-  -ms-transition-property: right;
-  -o-transition-property: right;
-  transition-property: right;
+  -webkit-transition-property: left;
+  -moz-transition-property: left;
+  -ms-transition-property: left;
+  -o-transition-property: left;
+  transition-property: left;
 }
-
 #sequence .animate-in .info4 {
-  right: 15%;
+  left: 8%;
+  top: 120px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -387,22 +419,55 @@ table {
   transition-duration: 4s;
 }
 #sequence .animate-out .info4 {
-  right: -150%;
+  left: -150%;
+  top: 120px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-
 #sequence .info4 img.chef-welcome {
   position: absolute;
-  width: 75%;
+  width: 220%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 }
-
+#sequence .chef-welcome {
+  left: -140%;
+  top: 400px;
+  max-width: 220%;
+  z-index: 6;
+  background-color: rgba(180,180,180,0.1);
+  border-radius: 10px;
+  opacity: 0.9;
+  -webkit-transition-property: left top;
+  -moz-transition-property: left top;
+  -ms-transition-property: left top;
+  -o-transition-property: left top;
+  transition-property: left top;
+}
+#sequence .animate-in .chef-welcome {
+  left: 120%;
+  top: 200px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+  z-index: 4;
+}
+#sequence .animate-out .chef-welcome {
+  left: 140%;
+  top: -30px;
+  z-index: 2;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
 object.bennett-cv {
   background-image: url('/assets/bayon.jpg');
   height: 800px;
@@ -449,7 +514,7 @@ object.bennett-cv {
   transform: rotate(40deg);
   z-index: 2;
 }
-#sequence .sky {
+/*#sequence .sky {
   height: auto;
   width: 100%;
   left: -6%;
@@ -484,8 +549,8 @@ object.bennett-cv {
   -ms-transition-duration: 4s;
   -o-transition-duration: 4s;
   transition-duration: 4s;
-}
-#sequence .thumb .chef-welcome {
+}*/
+/*#sequence .thumb .chef-welcome {
   left: -30%;
   opacity: 0;
   max-width: 40%;
@@ -548,3 +613,4 @@ object.bennett-cv {
   left: 20%;
   top: 200px;
 }
+*/
