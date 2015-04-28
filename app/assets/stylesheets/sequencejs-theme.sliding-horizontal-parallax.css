@@ -68,13 +68,13 @@ table {
 /* THEME STYLES */
 #sequence {
   position: relative;
-  min-height: 600px;
+  min-height: 800px;
   max-width: 1400px;
   min-width: 960px;
   margin: 0 auto;
   overflow: hidden;
-  background: url(../images/AkuAkivi.png) 600px 10px,
-    url(../images/bg-sky.png) repeat-x #65b7f1;
+  /*background: url('/assets/AhuAkivi.png') cover no-repeat,
+    url('/assets/bg-sky.png') repeat-x #65b7f1;*/
   color: white;
   font-family: "Play", sans-serif;
 }
@@ -104,7 +104,7 @@ table {
   font-size: 80px;
   font-weight: bold;
   position: absolute;
-  opacity: 0.4;
+  opacity: 0.6;
   top: 280px;
   height: 41px;
   width: 39px;
@@ -139,8 +139,13 @@ table {
   font-size: 1.5em;
   line-height: 1.2em;
 }
-#sequence .info {
-  color: black;
+/*#sequence .info1 .info2 .info3 .info4{
+  background-color: rgba(180,180,180,0.3);
+  border-radius: 15px;
+  padding: 10px;
+}*/
+#sequence .info1 {
+  color: white;
   font-size: 1em;
   right: 150%;
   line-height: 1.2em;
@@ -148,6 +153,9 @@ table {
   width: 25%;
   z-index: 10;
   vertical-align: middle;
+  background-color: rgba(180,180,180,0.3);
+  border-radius: 15px;
+  padding: 10px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -159,7 +167,7 @@ table {
   -o-transition-property: right;
   transition-property: right;
 }
-#sequence .animate-in .info {
+#sequence .animate-in .info1 {
   right: 15%;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
@@ -167,7 +175,7 @@ table {
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-#sequence .animate-out .info {
+#sequence .animate-out .info1 {
   right: -150%;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
@@ -175,7 +183,7 @@ table {
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-#sequence .balloon {
+#sequence .chord {
   left: -140%;
   top: 200px;
   max-width: 40%;
@@ -186,7 +194,7 @@ table {
   -o-transition-property: left top;
   transition-property: left top;
 }
-#sequence .animate-in .balloon {
+#sequence .animate-in .chord {
   left: 15%;
   top: 70px;
   -webkit-transition-duration: 4s;
@@ -196,7 +204,7 @@ table {
   transition-duration: 4s;
   z-index: 4;
 }
-#sequence .animate-out .balloon {
+#sequence .animate-out .chord {
   left: 140%;
   top: -30px;
   z-index: 2;
@@ -206,7 +214,7 @@ table {
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-#sequence .aeroplane {
+#sequence .locative-landing {
   left: -50%;
   max-width: 40%;
   top: 800px;
@@ -217,7 +225,7 @@ table {
   -ms-transition-property: left top -ms-transform;
   transition-property: left top transform;
 }
-#sequence .animate-in .aeroplane {
+#sequence .animate-in .locative-landing {
   left: 10%;
   top: 100px;
   -webkit-transition-duration: 4s;
@@ -232,7 +240,7 @@ table {
   transform: rotate(20deg);
   z-index: 4;
 }
-#sequence .animate-out .aeroplane {
+#sequence .animate-out .locative-landing {
   left: 70%;
   top: -900px;
   -webkit-transition-duration: 4s;
@@ -283,7 +291,7 @@ table {
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-#sequence .kite {
+#sequence .thumbs-down .chef-logo {
   left: -30%;
   opacity: 0;
   max-width: 40%;
@@ -300,7 +308,7 @@ table {
   -ms-transition-property: left top -ms-transform;
   transition-property: left top transform;
 }
-#sequence .animate-in .kite {
+#sequence .animate-in .thumbs-down .chef-logo {
   left: -15%;
   top: 300px;
   opacity: 1;
@@ -321,7 +329,7 @@ table {
   -o-transition-duration: 4s;
   transition-duration: 4s;
 }
-#sequence .animate-out .kite {
+#sequence .animate-out .thumbs-down .chef-logo {
   left: -15%;
   opacity: 0;
   top: 300px;
@@ -342,7 +350,7 @@ table {
   -o-transition-duration: 3s;
   transition-duration: 3s;
 }
-#sequence .sequence-fallback .animate-in .kite {
+#sequence .sequence-fallback .animate-in .thumbs-down .chef-logo {
   left: 20%;
   top: 200px;
 }

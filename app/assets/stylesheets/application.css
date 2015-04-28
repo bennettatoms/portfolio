@@ -18,8 +18,151 @@ a {
   text-decoration: none;
 }
 
+#sequence {
+  background: url('/assets/AhuAkivi.png') no-repeat;
+  background-size: 100% 150%;
+  /*url('/assets/bg-sky.png') repeat-x */
+  background-color: rgb(150,242,253);
+}
+
+/*#sequence .info1 .info2 .info3 .info4 {
+  background-color: rgba(180,180,180,0.3);
+  border-radius: 15px;
+  padding: 10px;
+}*/
+
+#sequence .info2 {
+  color: black;
+  font-size: 1em;
+  right: 150%;
+  line-height: 1.2em;
+  top: 270px;
+  width: 25%;
+  z-index: 10;
+  vertical-align: middle;
+  background-color: rgba(180,180,180,0.3);
+  border-radius: 15px;
+  padding: 10px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+  -webkit-transition-property: right;
+  -moz-transition-property: right;
+  -ms-transition-property: right;
+  -o-transition-property: right;
+  transition-property: right;
+}
+
+#sequence .animate-in .info2 {
+  right: 15%;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+
+#sequence .animate-out .info2 {
+  right: -150%;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+
+img.journey {
+  width: 50px;
+  height: 50px;
+}
+
+#sequence .info3 {
+  color: black;
+  font-size: 1em;
+  right: 150%;
+  line-height: 1.2em;
+  top: 270px;
+  width: 25%;
+  z-index: 10;
+  vertical-align: middle;
+  background-color: rgba(180,180,180,0.3);
+  border-radius: 15px;
+  padding: 10px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+  -webkit-transition-property: right;
+  -moz-transition-property: right;
+  -ms-transition-property: right;
+  -o-transition-property: right;
+  transition-property: right;
+}
+
+#sequence .animate-in .info3 {
+  right: 15%;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+
+#sequence .animate-out .info3 {
+  right: -150%;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+
+#sequence .info4 {
+  color: black;
+  font-size: 1em;
+  right: 150%;
+  line-height: 1.2em;
+  top: 270px;
+  width: 25%;
+  z-index: 10;
+  vertical-align: middle;
+  background-color: rgba(180,180,180,0.3);
+  border-radius: 15px;
+  padding: 10px;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+  -webkit-transition-property: right;
+  -moz-transition-property: right;
+  -ms-transition-property: right;
+  -o-transition-property: right;
+  transition-property: right;
+}
+
+#sequence .animate-in .info4 {
+  right: 15%;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+#sequence .animate-out .info4 {
+  right: -150%;
+  -webkit-transition-duration: 4s;
+  -moz-transition-duration: 4s;
+  -ms-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  transition-duration: 4s;
+}
+
 object.bennett-cv {
-  background-image: url('/images/bayon.jpg');
+  background-image: url('/assets/bayon.jpg');
   height: 800px;
   width: 100%;
 }
