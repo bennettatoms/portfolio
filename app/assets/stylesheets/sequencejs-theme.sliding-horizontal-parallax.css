@@ -69,12 +69,12 @@ table {
 #sequence {
   position: relative;
   min-height: 800px;
-  max-width: 1400px;
+  max-width: 1440px;
   min-width: 960px;
   margin: 0 auto;
   overflow: hidden;
   background: url('/assets/AhuAkivi.png') no-repeat;
-  background-size: 100% 150%;
+  background-size: 110% 140%;
   background-color: rgb(150,242,253);
   color: white;
   font-family: "Play", sans-serif;
