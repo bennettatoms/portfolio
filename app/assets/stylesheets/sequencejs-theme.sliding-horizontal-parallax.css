@@ -106,7 +106,7 @@ table {
   font-weight: 900;
   position: absolute;
   opacity: 0.8;
-  top: 45%;
+  top: 40%;
   transform: translate(0, -50%)
   height: 41px;
   width: 39px;
@@ -146,7 +146,7 @@ table {
   font-size: 1.3em;
   right: 150%;
   line-height: 1.5em;
-  top: 450px;
+  top: 400px;
   width: 30%;
   z-index: 10;
   vertical-align: middle;
@@ -166,7 +166,7 @@ table {
 }
 #sequence .animate-in .info1 {
   right: 10%;
-  top: 450px;
+  top: 400px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
