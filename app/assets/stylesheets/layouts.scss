@@ -5,7 +5,7 @@
   $large-screen: em(860) !default;
   $base-font-color: $dark-gray !default;
   $centered-navigation-padding: 1em;
-  $centered-navigation-logo-height: 2em;
+  $centered-navigation-logo-height: 2.5em;
   $centered-navigation-background: rgba(231,241,236,0.6);
   $centered-navigation-color: transparentize($base-font-color, 0.2);
   $centered-navigation-color-hover: $base-font-color;
@@ -142,9 +142,20 @@
   }
 
   .logo img {
-    margin-bottom: -$centered-navigation-logo-height / 3;
+    margin-bottom: -$centered-navigation-logo-height / 2.5;
     max-height: $centered-navigation-logo-height;
-    opacity: 0.6;
+    opacity: 0.9;
+    background-color: darken($centered-navigation-background, 80%);
+  }
+
+  .linkedin img {
+    margin-bottom: -$centered-navigation-logo-height / 3;
+    max-height: $centered-navigation-logo-height * 0.8;
+  }
+
+  .github img {
+    margin-bottom: -$centered-navigation-logo-height / 3;
+    max-height: $centered-navigation-logo-height * 0.7;
   }
 
   // Sub menus

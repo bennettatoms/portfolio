@@ -28,3 +28,11 @@ $(document).ready(function() {
     });
   });
 });
+
+/**
+ * Apply a class to each child
+ * Required for IE8-
+ */
+$('.circle-container').children().each(function() {
+  $(this).addClass('item'+($(this).index() + 1));
+});
