@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title><%= full_title(yield(:title)) %></title>
+   <link rel="stylesheet" href="/assets/application.css.scss"/>
+  <link rel="stylesheet" href="/assets/sequencejs-theme.sliding-horizontal-parallax.css"/>
+
+  <script src="/assets/jquery-min.js"></script>
+  <script src="/assets/jquery.sequence-min.js"></script>
+  <script src="/assets/sequencejs-options.sliding-horizontal-parallax.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'layouts/navigation' %>
+<%= yield %>
+
+</body>
+</html>

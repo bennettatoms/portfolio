@@ -1,0 +1,24 @@
+<header class="centered-navigation" role="banner">
+  <div class="centered-navigation-wrapper">
+    <a href="javascript:void(0)" class="mobile-logo">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="Logo image">
+    </a>
+    <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+        <li class="nav-link" <%= 'class="active"' if @active == 'projects' %>><a href="/projects">Projects</a></li>
+        <li class="nav-link" <%= 'class="active"' if @active == 'cv' %>><a href="/cv">CV</a></li>
+        <li class="nav-link github"><a href="https://github.com/bennettatoms" target="_blank"><img src="/assets/github-logo.png"></a></li>
+        <li class="nav-link logo"><a href="/" class="logo"><img src="/assets/flashpacker.png" alt="Logo image">
+          </a>
+        </li>
+        <li class="nav-link linkedin"><a href="https://www.linkedin.com/in/bennettadams" target="_blank"><img src="/assets/linkedin.png"></a></li>
+        <li class="nav-link" <%= 'class="active"' if @active == 'odds_and_ends' %>><a href="/odds-and-ends">Odds and Ends</a></li>
+        <li class="nav-link" <%= 'class="active"' if @active == 'about' %>><a href="/about">About</a></li>
+
+        
+
+      </ul>
+    </nav>
+  </div>
+</header>
