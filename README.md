@@ -3,8 +3,9 @@
 [bennettadams.com](http://www.bennettadams.com)
 <br>
 ##Built Using
-* Sinatra
+* Rails
 * Bourbon
+* Sequence.JS
 * HTML5
 * CSS3
 * SASS

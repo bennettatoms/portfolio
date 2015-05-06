@@ -1,0 +1,327 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin horizontal-align {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.about {
+  @include outer-container;
+  min-width: 100%;
+  height: 100%;
+  background: url('/assets/tracks.jpg') no-repeat;
+  background-size: 100% 105%;
+}
+
+.about button {
+  margin-top: 50%; 
+  @include horizontal-align;
+}
+
+.hello-about {
+  @include span-columns(6);
+  margin: auto;
+}
+
+.built {
+  @include span-columns(6);
+}
+
+
+.bigbox {
+  @include outer-container;
+}
+
+.box {
+  background-color: silver;
+  height: 300px;
+  @include span-columns(4);
+}
+
+.flex-boxes {
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $base-font-color: $dark-gray !default;
+  $flex-box-border-color: $light-gray;
+  $flex-box-border: 1px solid $flex-box-border-color;
+  $flex-box-background: lighten($light-gray, 10%);
+  $flex-box-gutter: 0.4em;
+  $flex-box-width: 18em;
+  $flex-box-color: transparentize($base-font-color, 0.3);
+  $flex-box-top-colors: 
+    tomato, 
+    #72BFBF, 
+    #92B1E3, 
+    #E3D743,
+    #CCC,
+    #F6C05C;
+
+    @include clearfix;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(stretch);
+    @include flex-wrap(wrap);
+    clear: both;
+    text-align: center;
+
+  .flex-box {
+    @include transition (all 0.2s ease-in-out);
+    @include flex(2 2 15em);
+    @include align-self(stretch);
+    background: $flex-box-background;
+    border-radius: $base-border-radius;
+    box-shadow: inset 0 0 1px $flex-box-border-color, 0 2px 4px darken($base-background-color, 10%);
+    display: block;
+    margin: $flex-box-gutter;
+    padding: 2em 2em 3em 2em;
+    text-decoration: none;
+
+    @for $i from 1 to 7 { // assign colors from $flex-box-top-colors list
+      &:nth-child(#{$i}) {
+        $color-from-list: nth($flex-box-top-colors, $i);
+        border-top: 6px solid $color-from-list;
+        
+        &:focus,
+        &:hover {
+          background-color: transparentize($color-from-list, 0.9);
+        }
+      }
+    }
+
+    img {
+      display: block;
+      height: 3em;
+      margin-bottom: 2em;
+      margin: auto;
+      opacity: 0.4;
+    }
+
+    .flex-title {
+      color: $flex-box-color;
+      font-size: 1.2em;
+      font-weight: 800;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      color: transparentize($flex-box-color, 0.1);
+      line-height: 1.5em;
+      margin: auto;
+    }
+  }
+
+  .flex-box-big {
+    @include flex(1 1 40em);
+  }
+}
+
+section {
+  @include outer-container;
+}
+
+/**
+ * Mixin to put items on a circle
+ * [1] - Allows children to be absolutely positioned
+ * [2] - Allows the mixin to be used on a list
+ * [3] - In case box-sizing: border-box has been enabled
+ * [4] - Allows any type of direct children to be targeted
+ */
+
+@mixin putOnCircle( 
+          $nb-items, //Number of items
+          $circle-size, //Parent size
+          $item-size, //Item size
+          $class-for-IE: false //Base class name, false means use of pseudo-selectors
+       ) {
+  $nb-items: 4; 
+  $circle-size: 450px;    
+  $half-item:     $item-size / 2;
+  $half-parent: $circle-size / 2;
+  
+  position: relative;               /* [1] */
+  width:  $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%; 
+  list-style: none;                 /* [2] */ 
+  @include box-sizing(content-box); /* [3] */ 
+  
+  > * {                             /* [4] */
+    display: block;
+    position: absolute;
+    top:  50%; 
+    left: 50%;
+    width:  $item-size;
+    height: $item-size;
+    margin: -$half-item;
+  
+    $angle: 360 / $nb-items;
+    $rot: 0;
+    @for $i from 1 to $nb-items+1 {
+      
+      // If no support for IE8-
+      
+      @if $class-for-IE == false {
+        &:nth-of-type(#{$i}) {
+          @include transform(rotate(#{$rot}deg) translate($half-parent) rotate(-#{$rot}deg));
+        }
+      }
+      
+      // If support for IE8-  
+      
+      @else {
+        &.#{$class-for-IE}#{$i} {
+          // If CSS transforms are not supported
+          $mt: sin($rot * pi() / 180) * $half-parent - $half-item;
+          $ml: cos($rot * pi() / 180) * $half-parent - $half-item;
+          margin: $mt 0 0 $ml;
+        }
+      }
+      $rot: $rot + $angle;
+    }
+  }
+}
+
+.circle-container {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+  @include putOnCircle(8, 20em, 6em, false); 
+  margin: 5em auto 0;
+  border: solid 5px tomato;
+  
+  a {
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px tomato;
+  }
+  
+  img { 
+    display: block; 
+    width: 100%; 
+    border-radius: 50%;
+    @include  filter(grayscale(100%));
+    
+    &:hover {
+      @include filter(grayscale(0));
+    }
+  }
+}
+
+.circle-container > h1 {
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
+@keyframes rot {
+  from {
+    transform:        rotate(0deg)
+                      translate(-225px)
+                      rotate(0deg);
+   -webkit-transform: rotate(0deg)
+                      translate(-225px)
+                      rotate(0deg);
+  }
+  to {
+    transform:        rotate(360deg)
+                      translate(-225px)
+                      rotate(-360deg);
+   -webkit-transform: rotate(360deg)
+                      translate(-225px) 
+                      rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes rot {
+  from {
+    transform:        rotate(0deg)
+                      translate(-225px)
+                      rotate(0deg);
+   -webkit-transform: rotate(0deg)
+                      translate(-225px)
+                      rotate(0deg);
+  }
+  to {
+    transform:        rotate(360deg)
+                      translate(-150px) 
+                      rotate(-360deg);
+   -webkit-transform: rotate(360deg)
+                      translate(-150px) 
+                      rotate(-360deg);
+  }
+}
+
+.rails {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin: -20px;
+    font-size: 100px;
+    animation: rot 3s infinite linear;
+    -webkit-animation: rot 3s infinite linear;
+    -moz-animation: rot 3s infinite linear;
+}
+
+.sequence {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin: -20px;
+    font-size: 100px;
+    animation: rot 3s infinite linear;
+    -webkit-animation: rot 3s infinite linear;
+    -moz-animation: rot 3s infinite linear;
+}
+
+.bourbon {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin: -20px;
+    font-size: 100px;
+    animation: rot 3s infinite linear;
+    -webkit-animation: rot 3s infinite linear;
+    -moz-animation: rot 3s infinite linear;
+}
+
+.sass {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin: -20px;
+    font-size: 100px;
+    animation: rot 3s infinite linear;
+    -webkit-animation: rot 3s infinite linear;
+    -moz-animation: rot 3s infinite linear;
+}
+
+
+
+
+

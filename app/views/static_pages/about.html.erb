@@ -1,3 +1,15 @@
 <% provide(:title, 'About') %>
-<h1>This website was created using Rails, Bourbon/SASS, Sequence.js, etc.</h1>
-<button>Hello World</button>
+<section class='about'>
+  <div class='hello-about'>
+    <button><a href='/'>Hello World</a></button>
+  </div>
+  <div class='built'>
+    <ul class='circle-container'>
+      <h1>This website was built using:</h1>
+      <li><a href='http://rubyonrails.org/'><img src='/assets/rails.png'></a></li>
+      <li><a href='http://www.sequencejs.com/'><img src='/assets/sequence-logo.png'></a></li>
+      <li><a href='http://www.bourbon.io/'><img src='/assets/bourbon.png'></a></li>
+      <li><a href='http://sass-lang.com/'><img src='/assets/sass.png'></a></li>
+    </ul>
+  </div>
+</section>
