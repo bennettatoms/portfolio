@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
-  def index
-    @active = 'index'
+  def home
+    @active = 'home'
   end
 
   def projects
