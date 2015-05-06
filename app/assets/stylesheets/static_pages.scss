@@ -233,19 +233,92 @@ section {
 
 @keyframes rot {
   from {
-    transform: rotate(0deg)
-               translate(-225px)
-               rotate(0deg);
+    transform:        rotate(0deg)
+                      translate(-225px)
+                      rotate(0deg);
+   -webkit-transform: rotate(0deg)
+                      translate(-225px)
+                      rotate(0deg);
   }
   to {
-    transform: rotate(360deg)
-               translate(-225px) 
-               rotate(-360deg);
+    transform:        rotate(360deg)
+                      translate(-225px)
+                      rotate(-360deg);
+   -webkit-transform: rotate(360deg)
+                      translate(-225px) 
+                      rotate(-360deg);
   }
 }
 
-.built {
-  animation: rot 8s infinite linear;
+@-webkit-keyframes rot {
+  from {
+    transform:        rotate(0deg)
+                      translate(-225px)
+                      rotate(0deg);
+   -webkit-transform: rotate(0deg)
+                      translate(-225px)
+                      rotate(0deg);
+  }
+  to {
+    transform:        rotate(360deg)
+                      translate(-150px) 
+                      rotate(-360deg);
+   -webkit-transform: rotate(360deg)
+                      translate(-150px) 
+                      rotate(-360deg);
+  }
+}
+
+.rails {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin: -20px;
+    font-size: 100px;
+    animation: rot 3s infinite linear;
+    -webkit-animation: rot 3s infinite linear;
+    -moz-animation: rot 3s infinite linear;
+}
+
+.sequence {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin: -20px;
+    font-size: 100px;
+    animation: rot 3s infinite linear;
+    -webkit-animation: rot 3s infinite linear;
+    -moz-animation: rot 3s infinite linear;
+}
+
+.bourbon {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin: -20px;
+    font-size: 100px;
+    animation: rot 3s infinite linear;
+    -webkit-animation: rot 3s infinite linear;
+    -moz-animation: rot 3s infinite linear;
+}
+
+.sass {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin: -20px;
+    font-size: 100px;
+    animation: rot 3s infinite linear;
+    -webkit-animation: rot 3s infinite linear;
+    -moz-animation: rot 3s infinite linear;
 }
 
 
