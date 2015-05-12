@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#partitioned-home {
+  display: inline;
+}
+
+.clickable-logo {
+  height: 100%;
+  @include span-columns(5);
+  @include shift(1);
+}
+
+#flashpacker-logo img {
+  height: 70%;
+}
+.nameplate {
+  background-color: silver;
+  height: 100%;
+  @include span-columns(5);
+}
+
 @mixin vertical-align {
   position: relative;
   top: 50%;
@@ -148,8 +167,8 @@ section {
           $item-size, //Item size
           $class-for-IE: false //Base class name, false means use of pseudo-selectors
        ) {
-  $nb-items: 4; 
-  $circle-size: 450px;    
+  $nb-items: 5; 
+  $circle-size: 400px;    
   $half-item:     $item-size / 2;
   $half-parent: $circle-size / 2;
   
@@ -205,7 +224,7 @@ section {
   transform: translateY(0%);
   @include putOnCircle(8, 20em, 6em, false); 
   margin: 5em auto 0;
-  border: solid 5px tomato;
+  border: none;
   
   a {
     display: block;

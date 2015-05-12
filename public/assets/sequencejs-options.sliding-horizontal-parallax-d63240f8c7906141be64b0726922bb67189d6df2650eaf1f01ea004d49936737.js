@@ -1,1 +1,0 @@
-$(document).ready(function(){var e={autoPlay:!0,nextButton:!0,prevButton:!0,preloader:!0,navigationSkip:!1},n=$("#sequence").sequence(e).data("sequence");n.afterLoaded=function(){$(".sequence-prev, .sequence-next").fadeIn(500)}});
