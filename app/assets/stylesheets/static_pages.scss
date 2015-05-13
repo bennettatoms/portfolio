@@ -12,13 +12,31 @@
   @include shift(1);
 }
 
-#flashpacker-logo img {
-  height: 70%;
+#flashpacker-logo {
+  opacity: 0.85;
+  margin-top: 5%;
 }
+
+area {
+  &:hover,
+  &:focus {
+    background-color: darken($action-color, 15%);
+    color: #fff;
+  }
+}
+
+.about-link {
+  font-family: $base-font-family;
+  font-size: 2em;
+  margin: 2% 0 0 28%;
+}
+
 .nameplate {
   background-color: silver;
   height: 100%;
   @include span-columns(5);
+  font-family: $handdrawn-bold-font-family;
+  font-size: 4em;
 }
 
 @mixin vertical-align {
@@ -40,7 +58,8 @@
 .about {
   @include outer-container;
   min-width: 100%;
-  height: 100%;
+  min-height: $medium-screen;
+  max-height: $large-screen;
   background: url('/assets/tracks.jpg') no-repeat;
   background-size: 100% 105%;
 }
@@ -168,7 +187,7 @@ section {
           $class-for-IE: false //Base class name, false means use of pseudo-selectors
        ) {
   $nb-items: 5; 
-  $circle-size: 400px;    
+  $circle-size: 450px;    
   $half-item:     $item-size / 2;
   $half-parent: $circle-size / 2;
   
@@ -280,67 +299,75 @@ section {
   }
   to {
     transform:        rotate(360deg)
-                      translate(-150px) 
+                      translate(-225px) 
                       rotate(-360deg);
    -webkit-transform: rotate(360deg)
-                      translate(-150px) 
+                      translate(-225px) 
                       rotate(-360deg);
   }
 }
 
-.rails {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    margin: -20px;
-    font-size: 100px;
-    animation: rot 3s infinite linear;
-    -webkit-animation: rot 3s infinite linear;
-    -moz-animation: rot 3s infinite linear;
+#rails {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin: -20px;
+  font-size: 100px;
+  animation: rot 5s infinite linear;
+  -webkit-animation: rot 5s infinite linear;
+  -moz-animation: rot 5s infinite linear;
 }
 
-.sequence {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    margin: -20px;
-    font-size: 100px;
-    animation: rot 3s infinite linear;
-    -webkit-animation: rot 3s infinite linear;
-    -moz-animation: rot 3s infinite linear;
+#sequence {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin: -20px;
+  font-size: 100px;
+  animation: rot 5s infinite linear;
+  -webkit-animation: rot 5s infinite linear;
+  -moz-animation: rot 5s infinite linear;
 }
 
-.bourbon {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    margin: -20px;
-    font-size: 100px;
-    animation: rot 3s infinite linear;
-    -webkit-animation: rot 3s infinite linear;
-    -moz-animation: rot 3s infinite linear;
+#bourbon {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin: -20px;
+  font-size: 100px;
+  animation: rot 5s infinite linear;
+  -webkit-animation: rot 5s infinite linear;
+  -moz-animation: rot 5s infinite linear;
 }
 
-.sass {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    margin: -20px;
-    font-size: 100px;
-    animation: rot 3s infinite linear;
-    -webkit-animation: rot 3s infinite linear;
-    -moz-animation: rot 3s infinite linear;
+#sass {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin: -20px;
+  font-size: 100px;
+  animation: rot 5s infinite linear;
+  -webkit-animation: rot 5s infinite linear;
+  -moz-animation: rot 5s infinite linear;
 }
 
-
-
-
-
+#agur {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin: -20px;
+  font-size: 100px;
+  animation: rot 5s infinite linear;
+  -webkit-animation: rot 5s infinite linear;
+  -moz-animation: rot 5s infinite linear;
+}
