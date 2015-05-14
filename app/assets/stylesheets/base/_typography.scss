@@ -1,9 +1,5 @@
 body {
-  @include font-face(AmaticSC, "AmaticSC/AmaticSC-regular", normal, normal, $asset-pipeline: true, $file-formats: eot woff ttf);
   @include font-face(Baumans, "Baumans/Baumans-regular", normal, normal, $asset-pipeline: true, $file-formats: eot woff ttf);
-  @include font-face(Wire-One, "Wire-One/Wire-One-regular", normal, normal, $asset-pipeline: true, $file-formats: eot woff ttf);
-  @include font-face(AmaticSC, "AmaticSC/AmaticSC-700", $weight: 700, $asset-pipeline: true, $file-formats: eot woff ttf);
-  @include font-face(Six-Caps, "Six-Caps/Six-Caps-regular", normal, normal, $asset-pipeline: true, $file-formats: eot woff ttf);
   @include font-feature-settings("kern", "liga", "pnum");
   -webkit-font-smoothing: antialiased;
   color: $base-font-color;
@@ -27,7 +23,6 @@ h6 {
   font-family: Wire-One;
   font-size: $base-font-size;
   line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
 }
 
 p {
@@ -56,7 +51,7 @@ hr {
   border-left: none;
   border-right: none;
   border-top: none;
-  margin: $base-spacing 0;
+  margin: 0.2em auto;
 }
 
 img,
