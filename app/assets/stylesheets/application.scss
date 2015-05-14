@@ -18,4 +18,5 @@
  @import 'layouts';
  @import 'static_pages';
 
+@include font-face(Six-Caps, 'Six-Caps/Six-Caps-regular', normal, $asset-pipeline: true);
 

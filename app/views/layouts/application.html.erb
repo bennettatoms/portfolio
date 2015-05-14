@@ -14,7 +14,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/navigation' %>
+  <% unless current_page?(root_path) %>
+    <%= render 'layouts/navigation' %>
+  <% end %>
 <%= yield %>
 
 </body>
