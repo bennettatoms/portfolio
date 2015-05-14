@@ -55,30 +55,6 @@ area {
   transform: translateX(-50%);
 }
 
-.about {
-  @include outer-container;
-  min-width: 100%;
-  min-height: $medium-screen;
-  max-height: $large-screen;
-  background: url('/assets/tracks.jpg') no-repeat;
-  background-size: 100% 105%;
-}
-
-.about button {
-  margin-top: 50%; 
-  @include horizontal-align;
-}
-
-.hello-about {
-  @include span-columns(6);
-  margin: auto;
-}
-
-.built {
-  @include span-columns(6);
-}
-
-
 .bigbox {
   @include outer-container;
 }
@@ -172,6 +148,28 @@ section {
   @include outer-container;
 }
 
+.about {
+  @include outer-container;
+  min-width: 100%;
+  
+  min-height: $large-screen;
+  background: url('/assets/tracks.jpg') no-repeat;
+  background-size: 100% 100%;
+}
+
+.built {
+  @include span-columns(8);
+  @include shift(2);
+  position: relative;
+
+  .hello-about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -30px 0 0 -80px;
+  }
+}
+
 /**
  * Mixin to put items on a circle
  * [1] - Allows children to be absolutely positioned
@@ -187,7 +185,7 @@ section {
           $class-for-IE: false //Base class name, false means use of pseudo-selectors
        ) {
   $nb-items: 5; 
-  $circle-size: 450px;    
+  $circle-size: 550px;    
   $half-item:     $item-size / 2;
   $half-parent: $circle-size / 2;
   
@@ -204,12 +202,12 @@ section {
     position: absolute;
     top:  50%; 
     left: 50%;
-    width:  $item-size;
-    height: $item-size;
+    width:  $item-size*1.5;
+    height: $item-size*1.5;
     margin: -$half-item;
   
     $angle: 360 / $nb-items;
-    $rot: 0;
+    $rot: 90;
     @for $i from 1 to $nb-items+1 {
       
       // If no support for IE8-
@@ -241,7 +239,7 @@ section {
   -webkit-transform: translateY(0%);
   -ms-transform: translateY(0%);
   transform: translateY(0%);
-  @include putOnCircle(8, 20em, 6em, false); 
+  @include putOnCircle(5, 50em, 15em, false); 
   margin: 5em auto 0;
   border: none;
   
@@ -255,7 +253,7 @@ section {
     display: block; 
     width: 100%; 
     border-radius: 50%;
-    @include  filter(grayscale(100%));
+    @include filter(grayscale(100%));
     
     &:hover {
       @include filter(grayscale(0));
@@ -272,18 +270,18 @@ section {
 @keyframes rot {
   from {
     transform:        rotate(0deg)
-                      translate(-225px)
+                      translate(-275px)
                       rotate(0deg);
    -webkit-transform: rotate(0deg)
-                      translate(-225px)
+                      translate(-275px)
                       rotate(0deg);
   }
   to {
     transform:        rotate(360deg)
-                      translate(-225px)
+                      translate(-275px)
                       rotate(-360deg);
    -webkit-transform: rotate(360deg)
-                      translate(-225px) 
+                      translate(-275px) 
                       rotate(-360deg);
   }
 }
@@ -291,83 +289,93 @@ section {
 @-webkit-keyframes rot {
   from {
     transform:        rotate(0deg)
-                      translate(-225px)
+                      translate(-275px)
                       rotate(0deg);
    -webkit-transform: rotate(0deg)
-                      translate(-225px)
+                      translate(-275px)
                       rotate(0deg);
   }
   to {
     transform:        rotate(360deg)
-                      translate(-225px) 
+                      translate(-275px) 
                       rotate(-360deg);
    -webkit-transform: rotate(360deg)
-                      translate(-225px) 
+                      translate(-275px) 
                       rotate(-360deg);
   }
 }
 
 #rails {
-  width: 100px;
-  height: 100px;
+  background-color: $logo-circle-background-color;
+  width: 150px;
+  height: 150px;
   position: absolute;
   top: 200px;
   left: 50%;
-  margin: -20px;
-  font-size: 100px;
-  animation: rot 5s infinite linear;
-  -webkit-animation: rot 5s infinite linear;
-  -moz-animation: rot 5s infinite linear;
+  margin: 0px;
+  padding: 50px;
+  font-size: 150px;
+  animation: rot 8s infinite linear;
+  -webkit-animation: rot 8s infinite linear;
+  -moz-animation: rot 8s infinite linear;
 }
 
-#sequence {
-  width: 100px;
-  height: 100px;
+#sqnc {
+  background-color: $logo-circle-background-color;
+  width: 150px;
+  height: 150px;
   position: absolute;
   top: 200px;
   left: 50%;
-  margin: -20px;
-  font-size: 100px;
-  animation: rot 5s infinite linear;
-  -webkit-animation: rot 5s infinite linear;
-  -moz-animation: rot 5s infinite linear;
+  margin: 0px;
+  padding: 50px;
+  font-size: 150px;
+  animation: rot 8s infinite linear;
+  -webkit-animation: rot 8s infinite linear;
+  -moz-animation: rot 8s infinite linear;
 }
 
 #bourbon {
-  width: 100px;
-  height: 100px;
+  background-color: $logo-circle-background-color;
+  width: 150px;
+  height: 150px;
   position: absolute;
   top: 200px;
   left: 50%;
-  margin: -20px;
-  font-size: 100px;
-  animation: rot 5s infinite linear;
-  -webkit-animation: rot 5s infinite linear;
-  -moz-animation: rot 5s infinite linear;
+  margin: 0px;
+  padding: 50px;
+  font-size: 150px;
+  animation: rot 8s infinite linear;
+  -webkit-animation: rot 8s infinite linear;
+  -moz-animation: rot 8s infinite linear;
 }
 
 #sass {
-  width: 100px;
-  height: 100px;
+  background-color: $logo-circle-background-color;
+  width: 150px;
+  height: 150px;
   position: absolute;
   top: 200px;
   left: 50%;
-  margin: -20px;
-  font-size: 100px;
-  animation: rot 5s infinite linear;
-  -webkit-animation: rot 5s infinite linear;
-  -moz-animation: rot 5s infinite linear;
+  margin: 0px;
+  padding: 50px;
+  font-size: 150px;
+  animation: rot 8s infinite linear;
+  -webkit-animation: rot 8s infinite linear;
+  -moz-animation: rot 8s infinite linear;
 }
 
 #agur {
-  width: 100px;
-  height: 100px;
+  background-color: $logo-circle-background-color;
+  width: 150px;
+  height: 150px;
   position: absolute;
   top: 200px;
   left: 50%;
-  margin: -20px;
-  font-size: 100px;
-  animation: rot 5s infinite linear;
-  -webkit-animation: rot 5s infinite linear;
-  -moz-animation: rot 5s infinite linear;
+  margin: 0px;
+  padding: 30px;
+  font-size: 150px;
+  animation: rot 8s infinite linear;
+  -webkit-animation: rot 8s infinite linear;
+  -moz-animation: rot 8s infinite linear;
 }
