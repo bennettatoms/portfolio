@@ -1,7 +1,7 @@
 <% provide(:title, 'About') %>
 <section class='about'>
   <div class='built'>
-    <h1>This website was built using:</h1>
+    <h1 onmouseover="slowReveal()">This website was built using:</h1>
   </div>
   <div class='hello-about'>
     <button>Hello World</button>
@@ -44,3 +44,12 @@
     </ul>
   </div>
 </section>
+
+<script type="text/javascript">
+  function slowReveal() {
+    var i;
+    var leadIn = document.getElementsByTagName('h1');
+    var words = leadIn[0].innerHTML.split(" ");
+    console.log(words);
+  }
+</script>

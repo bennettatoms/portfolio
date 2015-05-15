@@ -13,22 +13,69 @@
   position: relative;
 }
 
-#flashpacker-logo,
-.cv-border,
-.odds-border,
-.projects-border {
+#flashpacker-logo {
   margin-top: 10px;
+}
+
+.cv-border-left,
+.cv-border-right,
+.odds-border-left,
+.odds-border-right,
+.projects-border-left,
+.projects-border-right {
   position: absolute;
 }
 
-.cv-border,
-.odds-border,
-.projects-border {
+
+.cv-border-left,
+.cv-border-right,
+.odds-border-left,
+.odds-border-right,
+.projects-border-left,
+.projects-border-right {
+  visibility: hidden;
+}
+
+.cv-border-left {
+  position: absolute;
+  top: 201px;
+  left: 142px;
   z-index: 10;
 }
 
-#projects-bar {
-  visibility: hidden;
+.cv-border-right {
+  position: absolute;
+  top: 201px;
+  left: 250px;
+  z-index: 10;
+}
+
+.odds-border-left {
+  position: absolute;
+  top: 158px;
+  left: 71px;
+  z-index: 10;
+}
+
+.odds-border-right {
+  position: absolute;
+  top: 158px;
+  left: 319px;
+  z-index: 10;
+}
+
+.projects-border-left {
+  position: absolute;
+  top: 99px;
+  left: 12px;
+  z-index: 10;
+}
+
+.projects-border-right {
+  position: absolute;
+  top: 99px;
+  left: 378px;
+  z-index: 10;
 }
 
 .highlighted {
@@ -55,6 +102,7 @@
 .contact-link-icons {
   display: block;
   margin: 0 auto;
+  margin-top: -25px; 
 }
 
 .contact-link-icons img {
@@ -204,6 +252,7 @@ section {
   @include span-columns(2);
 
   h1 {
+    visibility: visible;
     margin-top: 1em;
     text-align: right;
     font-family: AmaticSC-700;
