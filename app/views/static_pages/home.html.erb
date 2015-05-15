@@ -3,10 +3,21 @@
   <div class="clickable-logo">
     <img id="flashpacker-logo" src="/assets/port_flashpacker.png" border="0" width="411" height="623" orgWidth="507" orgHeight="768" usemap="#logo-nav" alt="" />
     <map name="logo-nav" id="logo-nav">
-      <area id="cv-circle" shape="circle" coords="217,208,36" alt="CV" href="/cv" style="outline:none;" target="_self"/>
-      <area id="odds-bar" alt="Odds & Ends" title="odds-bar" href="/odds-and-ends" shape="poly" coords="85,142,123,115,166,95,124,86,257,93,298,107,348,143,316,174,277,147,244,135,216,134,180,139,149,151,117,174" style="outline:none;" target="_self"/>
-      <area id="projects-bar" alt="Projects" title="projects-bar" href="/projects" shape="poly" coords="26,82,62,54,101,29,154,11,207,3,250,6,295,16,337,32,375,57,408,83,376,116,332,82,291,62,244,48,198,48,161,58,119,73,86,90,57,115" style="outline:none;" target="_self"/>
+      <area id="cv-circle" onmouseover="highlightArea('cv-circle');" onmouseout="returnToNormal();" class="cv-head" shape="circle" coords="217,208,36" alt="CV" href="/cv" target="_self"/>
+      
+      <area id="odds-bar" onmouseover="highlightArea('odds-bar');" onmouseout="returnToNormal();" class="odds-bar" alt="Odds & Ends" title="odds-bar" href="/odds-and-ends" shape="poly" coords="85,142,123,115,166,95,124,86,257,93,298,107,348,143,316,174,277,147,244,135,216,134,180,139,149,151,117,174" target="_self"/>
+
+      <area id="projects-bar" onmouseover="highlightArea('projects-bar');" onmouseout="returnToNormal();" class="projects-bar" alt="Projects" title="projects-bar" href="/projects" shape="poly" coords="26,82,62,54,101,29,154,11,207,3,250,6,295,16,337,32,375,57,408,83,376,116,332,82,291,62,244,48,198,48,161,58,119,73,86,90,57,115" style="outline:none;" target="_self"/>
     </map>
+    <svg width="411" height="623">
+      <circle class="cv-border" cx="216" cy="219" r="40" stroke="red" stroke-width="5" fill="none"/>
+    </svg>
+    <svg width="411" height="623">
+      <polygon class="odds-border" points="94,157 136,127 184,105 137,96 285,103 331,119 385,158 351,193 307,163 271,149 239,148 199,154 165,167 129,193" style="fill:none;stroke:red;stroke-width:5"/>
+    </svg>
+    <svg width="411" height="623">
+      <polygon class="projects-border" points="28,90,68,60,112,32,171,13,229,3,277,6,327,18,374,36,416,63,453,92,417,128,367,91,322,68,270,57,230,54,178,64,132,81,96,100,63,127" stroke="red" stroke-width="5" fill="none"/>
+    </svg>
     <h1 class="about-link"><a href="/about">(ABOUT)</a></h1>
   </div>
 
@@ -17,17 +28,17 @@
       <ul>
         <li class="home-github">
           <a href="https://github.com/bennettatoms" target="_blank">
-            <img src="/assets/github-logo.png">
+            <img src="/assets/github-logo.png" class="github-icon">
           </a>
         </li>
         <li class="home-email">
           <a href="mailto:bennettadams46@gmail.com">
-            <img src="/assets/email.png">
+            <img src="/assets/email.png" class="email-icon">
           </a>
         </li>
         <li class="home-linkedin">
           <a href="https://www.linkedin.com/in/bennettadams" target="_blank">
-            <img src="/assets/linkedin.png">
+            <img src="/assets/linkedin.png" class="linkedin-icon">
           </a>
         </li>
       </ul>
@@ -44,3 +55,22 @@
     </map> -->
     
 </div>
+
+<script type="text/javascript">
+  function highlightArea(areaId) {
+    var logo = document.getElementById('flashpacker-logo');
+    var selectArea = document.getElementById('logo-nav').areas;
+    logo.style.opacity = 0.7;
+    console.log(selectArea[0]);
+    selectArea[0].className = "highlighted";
+    // selectArea[0].style.outline = "solid";
+    // selectArea[0].style.outlineWidth = "10px";
+    // selectArea[0].style.outlineColor = "#333"; 
+  }
+
+  function returnToNormal() {
+    var logo = document.getElementById('flashpacker-logo');
+    logo.style.opacity = 0.85;
+  }
+
+</script>

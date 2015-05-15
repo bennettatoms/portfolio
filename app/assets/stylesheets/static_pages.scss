@@ -10,19 +10,31 @@
   height: 100%;
   @include span-columns(5);
   @include shift(1);
+  position: relative;
 }
 
-#flashpacker-logo {
-  opacity: 0.85;
-  margin-top: 3%;
+#flashpacker-logo,
+.cv-border,
+.odds-border,
+.projects-border {
+  margin-top: 10px;
+  position: absolute;
 }
 
-area {
-  &:hover,
-  &:focus {
-    background-color: darken($action-color, 15%);
-    color: #fff;
-  }
+.cv-border,
+.odds-border,
+.projects-border {
+  z-index: 10;
+}
+
+#projects-bar {
+  visibility: hidden;
+}
+
+.highlighted {
+  outline: solid;
+  outline-width: 10px;
+  outline-color: $dark-gray;
 }
 
 .about-link {
@@ -34,7 +46,7 @@ area {
 .nameplate {
   height: 50%;
   @include span-columns(5);
-  font-family: AmaticSC-700;
+  font-family: Six-Caps;
   font-size: 8em;
   margin-top: 3%;
   text-align: center;
@@ -48,6 +60,16 @@ area {
 .contact-link-icons img {
   height: $home-contact-icon-height;
   width: $home-contact-icon-width;
+
+  &:hover {
+    background-color: rgba(30,30,30,.2);
+    border-radius: 20%;
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+  }
 }
 
 .home-github,
@@ -179,11 +201,22 @@ section {
 }
 
 .built {
-  @include span-columns(8);
-  @include shift(2);
-  position: relative;
+  @include span-columns(2);
 
-  .hello-about {
+  h1 {
+    margin-top: 1em;
+    text-align: right;
+    font-family: AmaticSC-700;
+    font-size: 5em;
+    color: white;
+  }
+}
+
+.hello-about {
+  @include span-columns(8);
+  position: relative;
+  
+  button {
     position: absolute;
     top: 50%;
     left: 50%;

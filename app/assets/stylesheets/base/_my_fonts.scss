@@ -1,7 +1,7 @@
-@include font-face(AmaticSC, 'AmaticSC/AmaticSC-regular', normal, normal, $asset-pipeline: true, $file-formats: eot woff ttf);
+@include font-face(AmaticSC, 'AmaticSC/AmaticSC-regular', normal, normal, $asset-pipeline: true, $file-formats: ttf);
 
-@include font-face(Wire-One, 'Wire-One/Wire-One-regular', normal, normal, $asset-pipeline: true, $file-formats: eot woff ttf);
+@include font-face(Wire-One, 'Wire-One/Wire-One-regular', normal, normal, $asset-pipeline: true, $file-formats: ttf);
 
-@include font-face(AmaticSC-700, 'AmaticSC/AmaticSC-700', $weight: 700, $asset-pipeline: true, $file-formats: eot woff ttf);
+@include font-face(AmaticSC-700, 'AmaticSC/AmaticSC-700', $weight: 700, $asset-pipeline: true, $file-formats: ttf);
 
 @include font-face(Six-Caps, 'Six-Caps/Six-Caps-regular', normal, normal, $asset-pipeline: true, $file-formats: eot woff ttf);
