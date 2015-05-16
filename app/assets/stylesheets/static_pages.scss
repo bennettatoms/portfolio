@@ -250,15 +250,20 @@ section {
 
 .built {
   @include span-columns(2);
+}
 
-  h1 {
-    visibility: visible;
-    margin-top: 1em;
-    text-align: right;
-    font-family: AmaticSC-700;
-    font-size: 5em;
-    color: white;
-  }
+#built-with {
+  visibility: hidden;
+  margin-top: 1em;
+  text-align: right;
+  font-family: AmaticSC-700;
+  font-size: 5em;
+  color: white;
+  -webkit-animation: fadein .3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein .3s; /* Firefox < 16 */
+  -ms-animation: fadein .3s; /* Internet Explorer */
+  -o-animation: fadein .3s; /* Opera < 12.1 */
+  animation: fadein .3s;
 }
 
 .hello-about {
@@ -269,7 +274,7 @@ section {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -30px 0 0 -80px;
+    margin: 0px 0 0 -80px;
   }
 }
 
@@ -280,150 +285,153 @@ section {
  * [3] - In case box-sizing: border-box has been enabled
  * [4] - Allows any type of direct children to be targeted
  */
-
-@mixin putOnCircle( 
-          $nb-items, //Number of items
-          $circle-size, //Parent size
-          $item-size, //Item size
-          $class-for-IE: false //Base class name, false means use of pseudo-selectors
-       ) {
-  $nb-items: 5; 
-  $circle-size: 550px;    
-  $half-item:     $item-size / 2;
-  $half-parent: $circle-size / 2;
-  
-  position: relative;               /* [1] */
-  width:  $circle-size;
-  height: $circle-size;
-  padding: 0;
-  border-radius: 50%; 
-  list-style: none;                 /* [2] */ 
-  @include box-sizing(content-box); /* [3] */ 
-  
-  > * {                             /* [4] */
-    display: block;
-    position: absolute;
-    top:  50%; 
-    left: 50%;
-    width:  $item-size;
-    height: $item-size;
-    margin: -$half-item;
-    animation: rot 8s infinite linear;
-    -webkit-animation: rot 8s infinite linear;
-    -moz-animation: rot 8s infinite linear;
-  
-    $angle: 360 / $nb-items;
-    $rot: 90;
-    @for $i from 1 to $nb-items+1 {
-      
-      // If no support for IE8-
-      
-      @if $class-for-IE == false {
-        &:nth-of-type(#{$i}) {
-          @include transform(rotate(#{$rot}deg) translate($half-parent) rotate(-#{$rot}deg));
-        }
-      }
-      
-      // If support for IE8-  
-      
-      @else {
-        &.#{$class-for-IE}#{$i} {
-          // If CSS transforms are not supported
-          $mt: sin($rot * pi() / 180) * $half-parent - $half-item;
-          $ml: cos($rot * pi() / 180) * $half-parent - $half-item;
-          margin: $mt 0 0 $ml;
-        }
-      }
-      $rot: $rot + $angle;
-    }
-  }
-}
-
 .circle-container {
   position: relative;
-  top: 50%;
-  -webkit-transform: translateY(0%);
-  -ms-transform: translateY(0%);
-  transform: translateY(0%);
-  @include putOnCircle(5, 50em, 15em, false); 
+  /* [1] */
+  width: 500px;
+  height: 500px;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+  /* [2] */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  /* [3] */
   margin: 5em auto 0;
   border: none;
-  
-  a {
-    display: block;
-    border-radius: 50%;
-    box-shadow: 0 0 0 5px tomato;
-  }
-  
-  img { 
-    display: block; 
-    width: 100%; 
-    border-radius: 50%;
-    @include filter(grayscale(100%));
-    
-    &:hover {
-      @include filter(grayscale(0));
-    }
-  }
 }
-
-.circle-container > h1 {
-  -webkit-transform: translateY(50%);
-  -ms-transform: translateY(50%);
-  transform: translateY(50%);
+.circle-container > * {
+  /* [4] */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px;
+}
+.circle-container > *:nth-of-type(1) {
+  -moz-transform: rotate(0deg) translate(250px) rotate(-0deg);
+  -ms-transform: rotate(0deg) translate(250px) rotate(-0deg);
+  -webkit-transform: rotate(0deg) translate(250px) rotate(-0deg);
+  transform: rotate(0deg) translate(250px) rotate(-0deg);
+}
+.circle-container > *:nth-of-type(2) {
+  -moz-transform: rotate(72deg) translate(250px) rotate(-72deg);
+  -ms-transform: rotate(72deg) translate(250px) rotate(-72deg);
+  -webkit-transform: rotate(72deg) translate(250px) rotate(-72deg);
+  transform: rotate(72deg) translate(250px) rotate(-72deg);
+}
+.circle-container > *:nth-of-type(3) {
+  -moz-transform: rotate(144deg) translate(250px) rotate(-144deg);
+  -ms-transform: rotate(144deg) translate(250px) rotate(-144deg);
+  -webkit-transform: rotate(144deg) translate(250px) rotate(-144deg);
+  transform: rotate(144deg) translate(250px) rotate(-144deg);
+}
+.circle-container > *:nth-of-type(4) {
+  -moz-transform: rotate(216deg) translate(250px) rotate(-216deg);
+  -ms-transform: rotate(216deg) translate(250px) rotate(-216deg);
+  -webkit-transform: rotate(216deg) translate(250px) rotate(-216deg);
+  transform: rotate(216deg) translate(250px) rotate(-216deg);
+}
+.circle-container > *:nth-of-type(5) {
+  -moz-transform: rotate(288deg) translate(250px) rotate(-288deg);
+  -ms-transform: rotate(288deg) translate(250px) rotate(-288deg);
+  -webkit-transform: rotate(288deg) translate(250px) rotate(-288deg);
+  transform: rotate(288deg) translate(250px) rotate(-288deg);
+}
+.circle-container a {
+  display: block;
+  border-radius: 50%;
+  box-shadow: none;
+}
+.circle-container img {
+  display: block;
+  width: 100%;
+  margin-left: -40px;
+  border-radius: 5%;
+  -webkit-filter: grayscale(50%);
+  filter: grayscale(50%);
+}
+.circle-container img:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 @keyframes rot {
   from {
-    transform:        rotate(0deg)
-                      translate(-275px)
-                      rotate(0deg);
-   -webkit-transform: rotate(0deg)
-                      translate(-275px)
-                      rotate(0deg);
+    transform: rotate(0deg) translate(-250px) rotate(0deg);
+    -webkit-transform: rotate(0deg) translate(-250px) rotate(0deg);
   }
   to {
-    transform:        rotate(360deg)
-                      translate(-275px)
-                      rotate(-360deg);
-   -webkit-transform: rotate(360deg)
-                      translate(-275px) 
-                      rotate(-360deg);
+    transform: rotate(360deg) translate(-250px) rotate(-360deg);
+    -webkit-transform: rotate(360deg) translate(-250px) rotate(-360deg);
   }
 }
-
 @-webkit-keyframes rot {
   from {
-    transform:        rotate(0deg)
-                      translate(-275px)
-                      rotate(0deg);
-   -webkit-transform: rotate(0deg)
-                      translate(-275px)
-                      rotate(0deg);
+    transform: rotate(0deg) translate(-250px) rotate(0deg);
+    -webkit-transform: rotate(0deg) translate(-250px) rotate(0deg);
   }
   to {
-    transform:        rotate(360deg)
-                      translate(-275px) 
-                      rotate(-360deg);
-   -webkit-transform: rotate(360deg)
-                      translate(-275px) 
-                      rotate(-360deg);
+    transform: rotate(360deg) translate(-250px) rotate(-360deg);
+    -webkit-transform: rotate(360deg) translate(-250px) rotate(-360deg);
   }
 }
-
 #rails, 
 #sqnc,
 #bourbon,
 #sass,
 #agur {
-  background-color: $logo-circle-background-color;
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  top: 50%;
-  left: 50%; 
-  margin: 0px;
   padding: 30px;
   font-size: 150px;
-  
+  z-index: 15;
+  animation: rot 15s infinite linear;
+  -webkit-animation: rot 15s infinite linear;
+  -moz-animation: rot 15s infinite linear;
 }
+
+#rails {
+  width: 200px;
+  height: 200px;
+  animation-delay: 0s; 
+  -webkit-animation-delay: 0s; 
+  -moz-animation-delay: 0s; 
+}
+
+#rails img {
+  margin-top: -60px;
+}
+
+#sqnc {
+  width: 200px;
+  height: 68px;
+  animation-delay: -3s; 
+  -webkit-animation-delay: -3s; 
+  -moz-animation-delay: -3s; 
+  }
+
+
+#bourbon {
+  width: 200px;
+  height: 45px;
+  animation-delay: -6s; 
+  -webkit-animation-delay: -6s;
+  -moz-animation-delay: -6s;
+}
+
+#sass {
+  animation-delay: -9s;
+  -webkit-animation-delay: -9s;
+  -moz-animation-delay: -9s;
+}
+
+#agur {
+  width: 200px;
+  height: 85px;
+  animation-delay: -12s;
+  -webkit-animation-delay: -12s;
+  -moz-animation-delay: -12s;
+}
+
