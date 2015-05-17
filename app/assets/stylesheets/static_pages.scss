@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Home Page
 #partitioned-home {
   display: block;
 }
@@ -32,7 +33,9 @@
 .odds-border-left,
 .odds-border-right,
 .projects-border-left,
-.projects-border-right {
+.projects-border-right,
+.about-border-left,
+.about-border-right {
   visibility: hidden;
 }
 
@@ -78,16 +81,28 @@
   z-index: 10;
 }
 
-.highlighted {
-  outline: solid;
-  outline-width: 10px;
-  outline-color: $dark-gray;
-}
-
 .about-link {
   font-family: $base-font-family;
   font-size: 2em;
-  margin: 2% 0 0 28%;
+  margin-left: 18%;
+}
+
+.about-border-left,
+.about-below-logo,
+.about-border-right {
+  display: inline-block;
+}
+
+.about-border-left {
+  margin-right: -7px;
+}
+
+.about-border-right {
+  margin-left: -7px;
+}
+
+.about-below-logo h1 {
+  font-family: Baumans;
 }
 
 .nameplate {
@@ -146,98 +161,113 @@
   transform: translateX(-50%);
 }
 
-.bigbox {
-  @include outer-container;
-}
-
-.box {
-  background-color: silver;
-  height: 300px;
-  @include span-columns(4);
-}
-
-.flex-boxes {
-  $base-border-radius: 3px !default;
-  $base-background-color: white !default;
-  $dark-gray: #333 !default;
-  $light-gray: #DDD !default;
-  $base-font-color: $dark-gray !default;
-  $flex-box-border-color: $light-gray;
-  $flex-box-border: 1px solid $flex-box-border-color;
-  $flex-box-background: lighten($light-gray, 10%);
-  $flex-box-gutter: 0.4em;
-  $flex-box-width: 18em;
-  $flex-box-color: transparentize($base-font-color, 0.3);
-  $flex-box-top-colors: 
-    tomato, 
-    #72BFBF, 
-    #92B1E3, 
-    #E3D743,
-    #CCC,
-    #F6C05C;
-
-    @include clearfix;
-    @include display(flex);
-    @include justify-content(center);
-    @include align-items(stretch);
-    @include flex-wrap(wrap);
-    clear: both;
-    text-align: center;
-
-  .flex-box {
-    @include transition (all 0.2s ease-in-out);
-    @include flex(2 2 15em);
-    @include align-self(stretch);
-    background: $flex-box-background;
-    border-radius: $base-border-radius;
-    box-shadow: inset 0 0 1px $flex-box-border-color, 0 2px 4px darken($base-background-color, 10%);
-    display: block;
-    margin: $flex-box-gutter;
-    padding: 2em 2em 3em 2em;
-    text-decoration: none;
-
-    @for $i from 1 to 7 { // assign colors from $flex-box-top-colors list
-      &:nth-child(#{$i}) {
-        $color-from-list: nth($flex-box-top-colors, $i);
-        border-top: 6px solid $color-from-list;
-        
-        &:focus,
-        &:hover {
-          background-color: transparentize($color-from-list, 0.9);
-        }
-      }
-    }
-
-    img {
-      display: block;
-      height: 3em;
-      margin-bottom: 2em;
-      margin: auto;
-      opacity: 0.4;
-    }
-
-    .flex-title {
-      color: $flex-box-color;
-      font-size: 1.2em;
-      font-weight: 800;
-      margin-bottom: 0.5em;
-    }
-
-    p {
-      color: transparentize($flex-box-color, 0.1);
-      line-height: 1.5em;
-      margin: auto;
-    }
-  }
-
-  .flex-box-big {
-    @include flex(1 1 40em);
-  }
-}
+// Odds and Ends Page
 
 section {
   @include outer-container;
 }
+
+
+$parallax-window-height: 40em;
+$parallax-background-height: $parallax-window-height * 1.5;
+
+.parallax-window {
+  max-height: $parallax-window-height * 1.5;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax-static-content {
+  color: #9A9A8A;
+  padding: 8em 0;
+  position: relative;
+  z-index: 9;
+}
+
+.parallax-background {
+  background: url('/assets/angkor_wat_sunrise.JPG') repeat;
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+  height: $parallax-background-height;
+  left: 0;
+  position: absolute;
+  top: - $parallax-window-height / 3;
+  width: 100%;
+}
+
+.hover-tile-good,
+.hover-tile-healthy {
+  display: inline-block;
+}
+
+.hover-tile-good {
+  background: url('http://theterramarproject.org/thedailycatch/wp-content/uploads/2012/08/prn-good-logo-1y-2high1.jpg') no-repeat;
+}
+
+.hover-tile-healthy {
+  background: url('http://www.healthytravelmag.com/wp-content/uploads/2014/10/LOGOgrn1.jpg') no-repeat;
+
+}
+
+.hover-tile-outer {
+  $base-border-color: gainsboro !default;
+  $base-line-height: 1.5em !default;
+  $medium-screen: em(640) !default;
+  $hover-tile-height: 10em;
+  $base-spacing: 1.5em;
+
+  background-position: center center;
+  background-size: contain;
+  background-color: white;
+  border: 1px solid $base-border-color;
+  cursor: pointer;
+  height: $hover-tile-height;
+  margin-bottom: $base-line-height;
+  
+  @include media($medium-screen) {
+    width: 40%;
+  }
+
+  .hover-tile-container {
+    height: $hover-tile-height;
+    overflow: hidden;
+  }
+
+  .hover-tile-container:hover > .hover-tile {
+    @include transform(translate(0, -100%));
+  }
+
+  .hover-tile {
+    @include transition(all, 0.2s ease-in-out);
+    background: inherit;
+    color: white;
+    height: inherit;
+    overflow: hidden;
+    padding: $base-spacing;
+  }
+
+  .hover-tile-hidden {
+    background: transparentize(#000, 0.5);
+
+    p {
+      color: transparentize(#fff, 0.3);
+      line-height: $base-line-height;
+    }
+
+    h4 {
+      margin: 0 0 0.5em 0;
+    }
+  }
+}
+
+
+
+
+
+// About Page
 
 .about {
   @include outer-container;
