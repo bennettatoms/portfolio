@@ -167,12 +167,320 @@ section {
   @include outer-container;
 }
 
+@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 0.9; } }
+@-moz-keyframes fadeIn { from { opacity: 0; } to { opacity: 0.9; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 0.9; } }
 
-$parallax-window-height: 40em;
-$parallax-background-height: $parallax-window-height * 1.5;
+.image-gradient-dynamic {
+  $image-gradient-color-top: red; 
+  $transparency-top: 0.6;
+  $image-gradient-color-bottom: green; 
+  $transparency-bottom: 0.6;
+  $vertical-angle: 0deg;
+  $image-gradient-color-left: teal; 
+  $transparency-left: 0.6;
+  $image-gradient-color-right: yellow; 
+  $transparency-right: 0.6;
+  $horizontal-angle: 90deg;
+  $image-gradient-dynamic-height: $large-screen;
+
+  height: $image-gradient-dynamic-height;
+  width: 100%;
+  line-height: 0;
+  position: relative;
+
+  .copy {
+    @include transform(translate(-50%, -50%));
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    z-index: 10;
+    -webkit-animation: fadein .3s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein .3s; /* Firefox < 16 */
+    -ms-animation: fadein .3s; /* Internet Explorer */
+    -o-animation: fadein .3s; /* Opera < 12.1 */
+    animation: fadein .3s;
+      
+    h1 {
+      font-family: Wire-One;
+      font-size: 3.5em;
+      color: $dark-gray;
+      font-weight: 800;
+      line-height: 1.5em;
+      position: relative;
+      padding: 0 1.5em;
+    }
+
+    p {
+      font-family: Wire-One;
+      font-size: 2.5em;
+      color: $dark-gray;
+      font-weight: 800;
+      line-height: 1.5em;
+      position: relative;
+    }
+  }
+
+  #map {
+    height: $image-gradient-dynamic-height;
+    width: 100%;
+    opacity: 0.7;
+
+    @include linear-gradient($vertical-angle, transparentize($image-gradient-color-top, $transparency-top), 
+      transparentize($image-gradient-color-bottom, $transparency-bottom));
+    display: block;
+    @include position(absolute, 0px 0px 0px 0px);
+
+    &:after {
+      @include linear-gradient($horizontal-angle, transparentize($image-gradient-color-left, $transparency-left), 
+        transparentize($image-gradient-color-right, $transparency-right));
+      @include position(absolute, 0px 0px 0px 0px);
+      content: '';
+      display: block;
+    }
+  }
+}
+
+.bennett-pic {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  height: 220px;
+  width: 220px;
+  opacity:0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  -ms-animation: fadeIn ease-in 1;
+  -o-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation: forwards;
+  -o-animation: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  -ms-animation: 1.5s;
+  -o-animation: 1.5s;
+  animation-duration: 1.5s;
+
+  img {
+    border-radius: 50%;
+    border: solid;
+    border-color: $logo-blue;
+    border-width: 6px;
+  }
+}
+
+@mixin texture($gradient-angle, $bg-color-1, $bg-color-2, $texture-number, $inverted) { $texture-list: 
+  "paper.png"             // Fabric and paper
+  "rice_paper.png"
+  "noise_lines.png"
+  "fabric_plaid.png"
+  "first_aid_kit.png"
+  "texturetastic_gray.png"
+  "lil_fiber.png"
+  "tex2res5.png"
+  "skin_side_up.png"
+  "light_noise_diagonal.png"
+  "chruch.png"
+  "45degreee_fabric.png"
+  "bgnoise_lg.png"
+  "little_pluses.png"
+  "squairy_light.png"
+  "white_texture.png"
+  "binding_light.png"
+  "double_lined.png"      // Grid, mesh and squares
+  "grid.png"
+  "absurdidad.png"
+  "grid_noise.png"
+  "fancy_deboss.png"
+  "graphy.png"
+  "noise_pattern_with_crosslines.png"
+  "old_mathematics.png"
+  "ps_neutral.png"
+  "subtle_freckles.png"
+  "wavegrid.png"
+  "az_subtle.png"
+  "tiny_grid.png"
+  "wavegrid.png"
+  "gridme.png"
+  "noisy_grid.png"
+  "subtlenet2.png"
+  "white_carbon.png"
+  "lghtmesh.png"
+  "p5.png"                 // Dots
+  "worn_dots.png"
+  "subtle_dots.png"
+  "brillant.png"
+  "farmer.png"
+  "retina_dust.png"        // Lines
+  "pinstripe.png"
+  "line_horizontal1.png"
+  "line_horizontal2.png"
+  "linen.png" 
+  "vintage_speckles.png"   // Patina and irregular
+  "subtle_grunge.png"
+  "old_wall.png"
+  "brushed.png"
+  "stucco.png"
+  "mooning.png"
+  "husk.png"
+  "concrete_wall_2.png"
+  "noisy.png"
+  "concrete_wall_3.png"
+  "subtle_surface.png"
+  "dust.png"
+  "light_alu.png"
+  "corrugation.png" 
+  "kindajean.png"           // Diagonal
+  "line_diagonal1.png"
+  "line_diagonal2.png"
+  "groovepaper.png"
+  "brushed_alu.png"
+  "rough_diagonal.png"
+  "diagonal-noise.png"
+  "cross_scratches.png"
+  "striped_lens.png"
+  "debut_light.png"
+  "diagonal_waves.png"    // Special
+  "honey_im_subtle.png"
+  "pw_maze_white.png"
+  "subtle_zebra_3d.png"
+  "white_wave.png"
+  "circles.png"
+  "crosses.png"
+  "grilled.png"
+  "pw_pattern.png"
+  "struckaxiom.png"
+  "vichy.png"
+  "wavecut.png"
+  "whitey.png"
+  "cream_pixels.png"
+  "grey.png"
+  "shinedotted.png"
+  "stacked_circles.png"
+  "noisy_grid_simple.png";
+
+  @if ($inverted == 1) {
+    @include background(url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/#{nth($texture-list, $texture-number)}"), linear-gradient($gradient-angle, $bg-color-1, $bg-color-2), center no-repeat $bg-color-1 scroll);
+  }
+
+  @else {
+    @include background(url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/inverted/#{nth($texture-list, $texture-number)}"), linear-gradient($gradient-angle, $bg-color-1, $bg-color-2), center no-repeat $bg-color-1 scroll);
+  }
+}
+
+// The mixin above should preferably be in a file of its own. Below is the code for the object that has the texture.
+
+.texture {
+  $texture-height: 15em;
+  $texture-top-background: lighten(#ddf0ef, 1%);
+  $texture-bottom-background: darken(#ddf0ef, 10%);
+  height: $texture-height;
+  width: 100%;
+  margin-top: -13.5em;
+
+  .texture-normal {
+    // gradient color 1, gradient color 2, gradient angle, texture-number, 0=inverted or 1=normal  
+    @include texture(180deg, $texture-top-background, $texture-bottom-background, 31, 1); 
+    float: left;
+    height: $texture-height;
+    width: 0%;
+  }
+
+  .texture-inverted {
+    // gradient color 1, gradient color 2, gradient angle, texture-number, 0=inverted or 1=normal  
+    @include texture(180deg, $texture-top-background, $texture-bottom-background, 31, 0); 
+    float: left;
+    height: $texture-height;
+    width: 100%;
+
+    h1 {
+      font-family: Wire-One;
+      font-size: 10em;
+      color: $base-font-color;
+      line-height: $base-line-height;
+      text-align: center;
+      margin: auto;
+    }
+  }
+}
+
+
+
+
+
+.fade-in-element {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  
+  $image-gradient-color-top: $light-gray; 
+  $transparency-top: 0.6;
+  $image-gradient-color-bottom: $dark-gray; 
+  $transparency-bottom: 0.6;
+  $vertical-angle: 0deg;
+  $image-gradient-color-left: $logo-orange; 
+  $transparency-left: 0.6;
+  $image-gradient-color-right: $logo-blue; 
+  $transparency-right: 0.6;
+  $horizontal-angle: 90deg;
+
+  @include clearfix;
+  @include span-columns(8);
+  @include shift(2);
+  border-radius: $base-border-radius;
+  border: 1px solid silver;
+  box-shadow: 0 2px 2px transparentize(black, 0.8);
+  line-height: $base-line-height;  
+  text-align: center;
+  margin: -160px 0 -60px 0;
+
+  @include linear-gradient($vertical-angle, transparentize($image-gradient-color-top, $transparency-top), 
+      transparentize($image-gradient-color-bottom, $transparency-bottom));
+  display: block;
+  @include position(absolute, 860px 0px 0px 0px);
+
+  &:after {
+    @include linear-gradient($horizontal-angle, transparentize($image-gradient-color-left, $transparency-left), 
+      transparentize($image-gradient-color-right, $transparency-right));
+    @include position(absolute, 0px 0px 0px 0px);
+    content: '';
+    display: block;
+  }
+
+  h1 {
+    font-family: Wire-One;
+    font-size: 10em;
+    color: $base-font-color;
+    line-height: $base-line-height;
+    text-align: center;
+  }
+}
+
+.js-fade-element-hide {
+  opacity: 0;
+}
+
+.js-fade-element-show {
+  @include transition (all 0.4s ease-in-out);
+  opacity: 1;
+}
+
+$parallax-window-height: 30em;
+$parallax-background-height: $parallax-window-height;
 
 .parallax-window {
-  max-height: $parallax-window-height * 1.5;
+  max-height: $parallax-window-height;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -180,8 +488,6 @@ $parallax-background-height: $parallax-window-height * 1.5;
 }
 
 .parallax-static-content {
-  color: #9A9A8A;
-  padding: 8em 0;
   position: relative;
   z-index: 9;
 }
@@ -198,31 +504,133 @@ $parallax-background-height: $parallax-window-height * 1.5;
   width: 100%;
 }
 
-.hover-tile-good,
-.hover-tile-healthy {
+.parallax-background-music {
+  background: url('/assets/dancing_partner_art.png') no-repeat;
+  background-size: 65%;
+  background-color: $light-gray;
+}
+
+.parallax-window-music {
+  height: $parallax-window-height;
+}
+
+.parallax-static-content-music {
+  @include span-columns(4);
+  @include shift(8);
+  color: $dark-gray;
+  top: 35%;  
+}
+
+.parallax-window-music b {
+  font-family: Wire-One;
+  font-size: 10em;
+}
+
+.music-copy,
+.spotify,
+.music-copy-one {
   display: inline-block;
+  margin: 30px 0 35px 0;
 }
 
-.hover-tile-good {
-  background: url('http://theterramarproject.org/thedailycatch/wp-content/uploads/2012/08/prn-good-logo-1y-2high1.jpg') no-repeat;
+.music-copy-one {
+  @include span-columns(3.5);
+  @include shift(0.5);
+  font-family: Wire-One;
+  font-size: 2em;
+  font-weight: 600;
+  margin-top:30px;
 }
 
-.hover-tile-healthy {
-  background: url('http://www.healthytravelmag.com/wp-content/uploads/2014/10/LOGOgrn1.jpg') no-repeat;
+.spotify {
+  @include span-columns(4);
+}
 
+.music-copy-two {
+  @include span-columns(3.5);
+  font-family: Wire-One;
+  font-size: 2em;
+  font-weight: 600;
+  margin-top:30px;
+}
+
+.parallax-background-travel {
+  background: url('/assets/angkor_wat_sunrise.JPG') no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.parallax-window-travel {
+  height: $parallax-window-height;
+  width: 100%;
+}
+
+.parallax-static-content-travel {
+  @include span-columns(4);
+  @include shift(4);
+  top: 37%;
+  color: $light-gray;
+}
+
+.parallax-window-travel b {
+  font-family: Wire-One;
+  font-size: 10em;
+  color: $light-gray;
+}
+
+.travel-copy {
+  display: inline-block;
+  margin: 20px 0 0 0;
+  font-family: Wire-One;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.travel-column-one {
+  @include span-columns(3.5);
+  @include shift(0.75);
+}
+
+.travel-column-two {
+  @include span-columns(3.5);
+}
+
+.travel-column-three {
+  @include span-columns(3.5);
+}
+
+.parallax-background-writing {
+  background: url('http://goodstock.photos/wp-content/uploads/macbook-air-laptop-wood-boards.jpg') no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.parallax-window-writing {
+  height: $parallax-window-height;
+}
+
+.parallax-static-content-writing {
+  @include span-columns(4);
+  top: 20%;
+}
+
+.parallax-window-writing b {
+  font-family: Wire-One;
+  font-size: 10em;
+  color: $logo-orange;
 }
 
 .hover-tile-outer {
   $base-border-color: gainsboro !default;
   $base-line-height: 1.5em !default;
   $medium-screen: em(640) !default;
-  $hover-tile-height: 10em;
+  $hover-tile-height: 12em;
   $base-spacing: 1.5em;
 
   background-position: center center;
   background-size: contain;
   background-color: white;
-  border: 1px solid $base-border-color;
+  border: none;
   cursor: pointer;
   height: $hover-tile-height;
   margin-bottom: $base-line-height;
@@ -241,19 +649,20 @@ $parallax-background-height: $parallax-window-height * 1.5;
   }
 
   .hover-tile {
-    @include transition(all, 0.2s ease-in-out);
+    @include transition(all, 0.3s ease-in-out);
     background: inherit;
     color: white;
     height: inherit;
     overflow: hidden;
     padding: $base-spacing;
+    border-radius: 10px;
   }
 
   .hover-tile-hidden {
-    background: transparentize(#000, 0.5);
+    background: transparentize(#000, 0.4);
 
     p {
-      color: transparentize(#fff, 0.3);
+      color: transparentize(#fff, 0.2);
       line-height: $base-line-height;
     }
 
@@ -263,9 +672,59 @@ $parallax-background-height: $parallax-window-height * 1.5;
   }
 }
 
+.writing-section {
+  display: block;
+}
 
+.hover-tile-good,
+.writing-copy,
+.hover-tile-healthy {
+  display: inline-block;
+  margin: 30px 0 35px 0;
+}
 
+.hover-tile-good {
+  @include span-columns(3.5);
+  @include shift(0.5);
+  background: url('http://theterramarproject.org/thedailycatch/wp-content/uploads/2012/08/prn-good-logo-1y-2high1.jpg') no-repeat;
+  background-size: 80%;
+  background-position: center center;
+}
 
+.writing-copy {
+  @include span-columns(4);
+  font-family: Wire-One;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.hover-tile-healthy {
+  @include span-columns(3.5);
+  background: url('http://www.healthytravelmag.com/wp-content/uploads/2014/10/LOGOgrn1.jpg') no-repeat;
+  background-size: contain;
+  background-padding: 0 3% 0 3%;
+  background-position: center center;
+}
+
+.hover-tile-good h4 a,
+.hover-tile-healthy h4 a {
+  color: $logo-orange;
+  font-family: Wire-One;
+  font-size: 2em;
+  font-weight: 800; 
+}
+
+.hover-tile-good p a {
+  color: $logo-orange;
+}
+
+.hover-tile-good p,
+.hover-tile-healthy p {
+  color: white;
+  font-family: Wire-One;
+  font-size: 1.5em;
+  font-weight: 700; 
+}
 
 // About Page
 
