@@ -379,8 +379,8 @@ section {
 
 .texture {
   $texture-height: 15em;
-  $texture-top-background: lighten(#ddf0ef, 1%);
-  $texture-bottom-background: darken(#ddf0ef, 10%);
+  $texture-top-background: lighten(#EEE, 5%);
+  $texture-bottom-background: lighten(#EEE, 45%);
   height: $texture-height;
   width: 100%;
   margin-top: -13.5em;
@@ -409,71 +409,6 @@ section {
       margin: auto;
     }
   }
-}
-
-
-
-
-
-.fade-in-element {
-  $base-border-color: gainsboro !default;
-  $base-border-radius: 3px !default;
-  $base-background-color: white !default;
-  $base-line-height: 1.5em !default;
-  $base-spacing: 1.5em !default;
-  $dark-gray: #333 !default;
-  $base-font-color: $dark-gray !default;
-  
-  $image-gradient-color-top: $light-gray; 
-  $transparency-top: 0.6;
-  $image-gradient-color-bottom: $dark-gray; 
-  $transparency-bottom: 0.6;
-  $vertical-angle: 0deg;
-  $image-gradient-color-left: $logo-orange; 
-  $transparency-left: 0.6;
-  $image-gradient-color-right: $logo-blue; 
-  $transparency-right: 0.6;
-  $horizontal-angle: 90deg;
-
-  @include clearfix;
-  @include span-columns(8);
-  @include shift(2);
-  border-radius: $base-border-radius;
-  border: 1px solid silver;
-  box-shadow: 0 2px 2px transparentize(black, 0.8);
-  line-height: $base-line-height;  
-  text-align: center;
-  margin: -160px 0 -60px 0;
-
-  @include linear-gradient($vertical-angle, transparentize($image-gradient-color-top, $transparency-top), 
-      transparentize($image-gradient-color-bottom, $transparency-bottom));
-  display: block;
-  @include position(absolute, 860px 0px 0px 0px);
-
-  &:after {
-    @include linear-gradient($horizontal-angle, transparentize($image-gradient-color-left, $transparency-left), 
-      transparentize($image-gradient-color-right, $transparency-right));
-    @include position(absolute, 0px 0px 0px 0px);
-    content: '';
-    display: block;
-  }
-
-  h1 {
-    font-family: Wire-One;
-    font-size: 10em;
-    color: $base-font-color;
-    line-height: $base-line-height;
-    text-align: center;
-  }
-}
-
-.js-fade-element-hide {
-  opacity: 0;
-}
-
-.js-fade-element-show {
-  @include transition (all 0.4s ease-in-out);
-  opacity: 1;
 }
 
 $parallax-window-height: 30em;

@@ -308,7 +308,7 @@ table {
   font-size: 1.3em;
   right: 150%;
   line-height: 1.5em;
-  top: 400px;
+  top: 200px;
   width: 30%;
   z-index: 10;
   vertical-align: middle;
@@ -328,7 +328,7 @@ table {
 }
 #sequence .animate-in .info3 {
   right: 10%;
-  top: 300px;
+  top: 50px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -337,7 +337,7 @@ table {
 }
 #sequence .animate-out .info3 {
   right: -150%;
-  top: 300px;
+  top: 50px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -353,7 +353,7 @@ table {
 }
 #sequence .thumb {
   left: -140%;
-  top: 150%;
+  top: 400px;
   max-width: 120%;
   z-index: 6;
   background-color: rgba(180,180,180,0);
@@ -368,7 +368,7 @@ table {
 }
 #sequence .animate-in .thumb {
   left: -150%;
-  top: -200px;
+  top: 120px;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
   -ms-transition-duration: 4s;
@@ -378,7 +378,7 @@ table {
 }
 #sequence .animate-out .thumb {
   left: 140%;
-  top: -30px;
+  top: 30px;
   z-index: 2;
   -webkit-transition-duration: 4s;
   -moz-transition-duration: 4s;
