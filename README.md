@@ -4,6 +4,8 @@
 <br>
 ##Built Using
 * Rails
+* Ruby
+* JavaScript
 * Bourbon
 * Sequence.JS
 * HTML5
