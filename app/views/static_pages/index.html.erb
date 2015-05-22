@@ -1,0 +1,91 @@
+<% provide(:title, 'Home') %>
+<div id="partitioned-home">
+  <div class="clickable-logo">
+    <img id="flashpacker-logo" src="/assets/port_flashpacker.png" border="0" width="411" height="623" orgWidth="507" orgHeight="768" usemap="#logo-nav" alt="" />
+    <map name="logo-nav" id="logo-nav">
+      <area id="cv-circle" onmouseover="highlightArea('cv-border');" onmouseout="returnToNormal('cv-border');" class="cv-head" shape="circle" coords="216,209,36" alt="CV" href="/cv"/>
+      
+      <area id="odds-bar" onmouseover="highlightArea('odds-border');" onmouseout="returnToNormal('odds-border');" class="odds-bar" alt="Odds & Ends" title="odds-bar" href="/odds-and-ends" shape="poly" coords="85,142,123,115,166,95,212,89,257,93,298,107,348,143,316,174,277,147,244,135,216,134,180,139,149,151,117,174"/>
+
+      <area id="projects-bar" onmouseover="highlightArea('projects-border');" onmouseout="returnToNormal('projects-border');" class="projects-bar" alt="Projects" title="projects-bar" href="/projects" shape="poly" coords="26,82,62,54,101,29,154,11,207,3,250,6,295,16,337,32,375,57,408,83,376,116,332,82,291,62,244,48,198,48,161,58,119,73,86,90,57,115" style="outline:none;"/>
+    </map>
+    <svg class="cv-border-left" width="40" height="40">
+      <polygon points="35,8 9,19 35,30" style="fill:#999;stroke:#999;stroke-width:5"/>
+    </svg>
+    <svg class="cv-border-right" width="40" height="40">
+      <polygon points="5,8 31,19 5,30" style="fill:#999;stroke:#999;stroke-width:5"/>
+    </svg>
+    <svg class="odds-border-left" width="40" height="40">
+      <polygon points="18,6 6,33 33,21" style="fill:#999;stroke:#999;stroke-width:5"/>
+    </svg>
+    <svg class="odds-border-right" width="40" height="40">
+      <polygon points="23,7 35,34 8,22" style="fill:#999;stroke:#999;stroke-width:5"/>
+    </svg>
+    <svg class="projects-border-left" width="40" height="40">
+      <polygon points="18,6 6,33 33,21" stroke="#999" stroke-width="5" fill="#999"/>
+    </svg>
+    <svg class="projects-border-right" width="40" height="40">
+      <polygon points="23,7 35,34 8,22" stroke="#999" stroke-width="5" fill="#999"/>
+    </svg>
+    <ul class="about-link">
+      <li class="about-border-left">
+        <svg width="40" height="45">
+          <polygon points="38,26 9,34 38,42" style="fill:#999;stroke:#999;stroke-width:5"/>
+        </svg>
+      </li>
+      <li class="about-below-logo">
+        <h1><a href="/about" onmouseover="highlightArea('about-border');" onmouseout="returnToNormal('about-border');">(ABOUT)</a></h1>
+      </li>
+      <li class="about-border-right">
+        <svg width="40" height="45">
+          <polygon points="2,26 31,34 2,42" style="fill:#999;stroke:#999;stroke-width:5"/>
+        </svg>
+      </li>
+    </ul>
+  </div>
+
+  <div class="nameplate">
+    <h6>Bennett Adams</h6>
+    <hr>
+    <div class="contact-link-icons">
+      <ul>
+        <li class="home-github">
+          <a href="https://github.com/bennettatoms" target="_blank">
+            <img src="/assets/github-logo.png" class="github-icon">
+          </a>
+        </li>
+        <li class="home-email">
+          <a href="mailto:bennettadams46@gmail.com">
+            <img src="/assets/email.png" class="email-icon">
+          </a>
+        </li>
+        <li class="home-linkedin">
+          <a href="https://www.linkedin.com/in/bennettadams" target="_blank">
+            <img src="/assets/linkedin.png" class="linkedin-icon">
+          </a>
+        </li>
+      </ul>
+    </div>
+    <hr>
+    <h6>Web Developer</h6>
+  </div>    
+</div>
+
+<script type="text/javascript">
+  function highlightArea(area) {
+    var selectAreaLeft = document.getElementsByClassName(area + "-left");
+    var selectAreaRight = document.getElementsByClassName(area + "-right");
+    console.log("showing" + selectAreaLeft[0] + " and " + selectAreaRight[0]);
+    selectAreaLeft[0].style.visibility = "visible";
+    selectAreaRight[0].style.visibility = "visible";
+  }
+
+  function returnToNormal(area) {
+    var selectAreaLeft = document.getElementsByClassName(area + "-left");
+    var selectAreaRight = document.getElementsByClassName(area + "-right");
+    console.log("hiding" + selectAreaLeft[0] + " and " + selectAreaRight[0]);
+    selectAreaLeft[0].style.visibility = "hidden";
+    selectAreaRight[0].style.visibility = "hidden";
+  }
+
+</script>
